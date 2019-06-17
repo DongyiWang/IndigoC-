@@ -133,6 +133,10 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/my_min_nodes_node.cpp)
+add_executable(my_minimal_publisher src/minimal_publisher.cpp)
+add_executable(my_sleepy_minimal_publisher src/sleepy_minimal_publisher.cpp)
+add_executable(my_minimal_subscriber src/minimal_subscriber.cpp)
+add_executable(my_minimal_simulator src/minimal_simulator.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,6 +152,11 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(my_minimal_publisher ${catkin_LIBRARIES})
+target_link_libraries(my_sleepy_minimal_publisher ${catkin_LIBRARIES})
+target_link_libraries(my_minimal_subscriber ${catkin_LIBRARIES})
+target_link_libraries(my_minimal_simulator ${catkin_LIBRARIES})
+
 
 #############
 ## Install ##
